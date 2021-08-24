@@ -13,7 +13,7 @@ export const durations = [
     { id: 3, name: 'Une soirée', price: 1000 },
     { id: 4, name: 'Une nuit', price: 5000 },
     { id: 5, name: 'Un week-end', price: 7500 },
-    { id: 6, name: 'Une semaine', price: 15000 },
+    { id: 6, name: '♥ Une semaine, et plus si affinités ♥', price: 15000 },
 ];
 
 export const activities = [

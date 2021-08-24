@@ -5,10 +5,18 @@ export function addOption(select, value, text, selected = false) {
     option.selected = selected;
     select.add(option);
 }
+export function addOption2(select, data, selected = false) {
+    let option = document.createElement('option');
+    option.value = data.id.toString();
+    option.text = data.name;
+    option.setAttribute('data-price', (data.price / 100).toString());
+    option.selected = selected;
+    select.add(option);
+}
 export function addOptions(select, values, selectedValue = null) {
     for (let value of values) {
         if (typeof value === 'object') {
-            addOption(select, value.id, value.name, selectedValue !== null && value.id === selectedValue);
+            addOption2(select, value, selectedValue !== null && value.id === selectedValue);
         }
         else {
             addOption(select, value, value.toString(), selectedValue !== null && value === selectedValue);

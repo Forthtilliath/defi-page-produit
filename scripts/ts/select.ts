@@ -12,21 +12,36 @@ export function addOption(select: HTMLSelectElement, value: string | number, tex
     select.add(option);
 }
 
+declare interface IData {
+    id: number;
+    name: string;
+    price: number;
+}
+
+export function addOption2(select: HTMLSelectElement, data: IData, selected: boolean = false) {
+    let option = document.createElement('option') as HTMLOptionElement;
+    option.value = data.id.toString();
+    option.text = data.name;
+    option.setAttribute('data-price', (data.price/100).toString());
+    option.selected = selected;
+    select.add(option);
+}
+
 /**
  * Ajoute un tableau d'éléments en option au menu select
  * @param {String[]} values Tableau de valeurs
  */
 export function addOptions(
     select: HTMLSelectElement,
-    values: string[] | number[] | { id: string | number; name: string }[],
+    values: string[] | number[] | IData[],
     selectedValue: string | number | null = null,
 ) {
     for (let value of values) {
         if (typeof value === 'object') {
-            addOption(select, value.id, value.name, selectedValue !== null &&  value.id === selectedValue);
+            addOption2(select, value, selectedValue !== null && value.id === selectedValue);
         } else {
-            addOption(select, value, value.toString(), selectedValue !== null &&  value === selectedValue);
-        } 
+            addOption(select, value, value.toString(), selectedValue !== null && value === selectedValue);
+        }
     }
 }
 

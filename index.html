@@ -9,7 +9,29 @@
         <script src="scripts/js/index.js" type="module" defer></script>
     </head>
     <body>
-        <div class="bright"></div>
+        <svg
+            display="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="32px"
+            height="32px"
+            viewBox="0 0 32 32"
+            enable-background="new 0 0 32 32"
+        >
+            <defs>
+                <g id="half-star">
+                    <polygon
+                        fill="var(--color-1)"
+                        points="11.547,10.918 0,12.118 8.822,19.867 6.127,31.4 16,25.325 16,0.66 	"
+                    ></polygon>
+                    <polygon
+                        fill="var(--color-2)"
+                        points="32,12.118 20.389,10.918 16.026,0.6 16,0.66 16,25.325 16.021,25.312 25.914,31.4 23.266,19.867
+                "
+                    ></polygon>
+                </g>
+            </defs>
+        </svg>
         <div class="container">
             <div class="productContainer">
                 <div class="productLeft">
@@ -22,40 +44,20 @@
                     <div class="productTop">
                         <h1 class="productTitle">Name</h1>
                         <div class="productRating">
-                            <svg class="productRatingImg filled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="1"
-                                    stroke="currentColor"
-                                    d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z"
-                                />
+                            <svg class="productRatingImg" viewBox="0 0 32 32">
+                                <use xlink:href="#half-star" class="filled"></use>
                             </svg>
-                            <svg class="productRatingImg filled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="1"
-                                    stroke="currentColor"
-                                    d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z"
-                                />
+                            <svg class="productRatingImg filled" viewBox="0 0 32 32">
+                                <use xlink:href="#half-star"></use>
                             </svg>
-                            <svg class="productRatingImg filled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="1"
-                                    stroke="currentColor"
-                                    d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z"
-                                />
+                            <svg class="productRatingImg filled" viewBox="0 0 32 32">
+                                <use xlink:href="#half-star"></use>
                             </svg>
-                            <svg class="productRatingImg filled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="1"
-                                    stroke="currentColor"
-                                    d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z"
-                                />
+                            <svg class="productRatingImg filled" viewBox="0 0 32 32">
+                                <use xlink:href="#half-star"></use>
                             </svg>
-                            <svg class="productRatingImg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="1"
-                                    stroke="currentColor"
-                                    d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z"
-                                />
+                            <svg class="productRatingImg halfed" viewBox="0 0 32 32">
+                                <use xlink:href="#half-star"></use>
                             </svg>
                         </div>
                     </div>
@@ -71,18 +73,18 @@
                         obcaecati, esse doloremque adipisci. Tempora asperiores pariatur sed eius enim!
                     </div>
                     <div class="productForm">
-                            <div class="productFormSelectWrapper">
-                                <select class="productFormSelect" id="select_suits"></select>
-                                <div class="productFromSelectPrice">+50€</div>
-                            </div>
-                            <div class="productFormSelectWrapper">
-                                <select class="productFormSelect" id="select_durations"></select>
-                                <div class="productFromSelectPrice">+100€</div>
-                            </div>
-                            <div class="productFormSelectWrapper">
-                                <select class="productFormSelect" id="select_activities"></select>
-                                <div class="productFromSelectPrice">+10€</div>
-                            </div>
+                        <div class="productFormSelectWrapper">
+                            <select class="productFormSelect" id="select_suits"></select>
+                            <div class="productFromSelectPrice">+<span class="productFromSelectPriceValue">0</span>&nbsp;€</div>
+                        </div>
+                        <div class="productFormSelectWrapper">
+                            <select class="productFormSelect" id="select_durations"></select>
+                            <div class="productFromSelectPrice">+<span class="productFromSelectPriceValue">0</span>&nbsp;€</div>
+                        </div>
+                        <div class="productFormSelectWrapper">
+                            <select class="productFormSelect" id="select_activities"></select>
+                            <div class="productFromSelectPrice">+<span class="productFromSelectPriceValue">0</span>&nbsp;€</div>
+                        </div>
                     </div>
                     <div class="productActions">
                         <div class="productAddCart">

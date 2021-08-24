@@ -34,7 +34,7 @@ productPriceNormal.innerText = formatPrice(normalPrice);
 productPricePromo.innerText = formatPrice(promoPrice);
 priceTotal.innerText = formatPrice(promoPrice);
 const btn_submit = document.querySelector('#btn_submit');
-const sound = new Audio('../../sounds/hum.mp3');
+const sound = new Audio('./sounds/hum.mp3');
 const addToCart = () => {
     sound.play();
 };

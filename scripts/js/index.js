@@ -35,7 +35,25 @@ productPricePromo.innerText = formatPrice(promoPrice);
 priceTotal.innerText = formatPrice(promoPrice);
 const btn_submit = document.querySelector('#btn_submit');
 const sound = new Audio('../../sounds/hum.mp3');
-const addToCart = () => { };
-btn_submit === null || btn_submit === void 0 ? void 0 : btn_submit.addEventListener('click', () => {
+const addToCart = () => {
     sound.play();
-});
+};
+btn_submit === null || btn_submit === void 0 ? void 0 : btn_submit.addEventListener('click', addToCart);
+const images = document.querySelectorAll('.productImage');
+const thumbs = document.querySelectorAll('.productThumb');
+const changeImage = (index) => {
+    thumbs.forEach((thumb, i) => {
+        thumb.classList.remove('active');
+        if (index === i) {
+            thumb.classList.add('active');
+        }
+    });
+    images.forEach((image, i) => {
+        image.classList.remove('active');
+        if (index === i) {
+            image.classList.add('active');
+        }
+    });
+};
+thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => changeImage(i)));
+changeImage(0);

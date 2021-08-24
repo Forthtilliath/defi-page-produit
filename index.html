@@ -35,10 +35,18 @@
         <div class="container">
             <div class="productContainer">
                 <div class="productLeft">
-                    <img src="./images/1.jpg" alt="normal-guy" class="productImage" />
-                    <img src="./images/2.jpg" alt="handsome-man" class="productImage" />
-                    <img src="./images/3.jpg" alt="disguise-duck" class="productImage active" />
-                    <img src="./images/4.jpg" alt="disguise-invisibility" class="productImage" />
+                    <div class="productImageWrapper">
+                        <img src="./images/product/1.jpg" alt="normal-guy" class="productImage" />
+                        <img src="./images/product/2.jpg" alt="handsome-man" class="productImage" />
+                        <img src="./images/product/3.jpg" alt="disguise-duck" class="productImage" />
+                        <img src="./images/product/4.png" alt="disguise-invisibility" class="productImage" />
+                    </div>
+                    <div class="productThumbWrapper">
+                        <img src="./images/thumbnails/1-thumb.png" alt="normal-guy" class="productThumb" />
+                        <img src="./images/thumbnails/2-thumb.png" alt="handsome-man" class="productThumb" />
+                        <img src="./images/thumbnails/3-thumb.png" alt="disguise-duck" class="productThumb" />
+                        <img src="./images/thumbnails/4-thumb.png" alt="disguise-invisibility" class="productThumb" />
+                    </div>
                 </div>
                 <div class="productRight">
                     <div class="productTop">
@@ -77,22 +85,28 @@
                             <select class="productFormSelect" id="select_suits">
                                 <option value="0">Choisissez la tenue de votre partenaire :</option>
                             </select>
-                            <div class="productFromSelectPrice">+<span class="productFromSelectPriceValue">0&nbsp;€</span></div>
+                            <div class="productFromSelectPrice">
+                                +<span class="productFromSelectPriceValue">0&nbsp;€</span>
+                            </div>
                         </div>
                         <div class="productFormSelectWrapper">
                             <select class="productFormSelect" id="select_durations">
                                 <option value="0">Choisissez la durée :</option>
                             </select>
-                            <div class="productFromSelectPrice">+<span class="productFromSelectPriceValue">0&nbsp;€</span></div>
+                            <div class="productFromSelectPrice">
+                                +<span class="productFromSelectPriceValue">0&nbsp;€</span>
+                            </div>
                         </div>
                         <div class="productFormSelectWrapper">
                             <select class="productFormSelect" id="select_activities">
                                 <option value="0">Choisissez l'activité principale :</option>
                             </select>
-                            <div class="productFromSelectPrice">+<span class="productFromSelectPriceValue">0&nbsp;€</span></div>
+                            <div class="productFromSelectPrice">
+                                +<span class="productFromSelectPriceValue">0&nbsp;€</span>
+                            </div>
                         </div>
                         <div class="productFormSelectWrapper">
-                            <div class="productFromPriceLabel">Montant total : </div>
+                            <div class="productFromPriceLabel">Montant total :</div>
                             <div class="productFromPriceTotal" id="priceTotal"></div>
                         </div>
                     </div>

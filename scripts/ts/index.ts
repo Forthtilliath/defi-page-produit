@@ -4,7 +4,7 @@ import * as Select from './select.js';
 // Prix en centimes
 const normalPrice = 50000;
 const promoPrice = 19990;
-const basePrice= promoPrice || normalPrice;
+const basePrice = promoPrice || normalPrice;
 
 //*************************************\
 //* MENUS SELECT                       *
@@ -19,7 +19,8 @@ const tabIds = ['select_suits', 'select_durations', 'select_activities'];
 const getIndexId = (id: string) => tabIds.indexOf(id);
 
 let tabPrices = new Array<number>(3);
-const formatPrice = (number: number) => (number / 100).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR',minimumFractionDigits: 2 });
+const formatPrice = (number: number) =>
+    (number / 100).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2 });
 const sumPrices = () => tabPrices.reduce((sum, value) => sum + value, basePrice);
 
 Select.addOptions(selectSuit, data.suits);
@@ -58,15 +59,37 @@ priceTotal.innerText = formatPrice(promoPrice);
 const btn_submit = document.querySelector('#btn_submit');
 const sound = new Audio('../../sounds/hum.mp3');
 
-const addToCart = () => {};
-
-btn_submit?.addEventListener('click', () => {
+const addToCart = () => {
     sound.play();
-});
+};
+
+btn_submit?.addEventListener('click', addToCart);
 
 //*************************************\
 //* SLIDER                             *
 //*************************************/
+
+const images = document.querySelectorAll('.productImage');
+const thumbs = document.querySelectorAll('.productThumb');
+
+const changeImage = (index: number) => {
+    thumbs.forEach((thumb, i) => {
+        thumb.classList.remove('active');
+        if (index === i) {
+            thumb.classList.add('active');
+        }
+    });
+    images.forEach((image, i) => {
+        image.classList.remove('active');
+        if (index === i) {
+            image.classList.add('active');
+        }
+    });
+};
+
+thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => changeImage(i)));
+
+changeImage(0);
 
 //*************************************\
 //* RATING                             *

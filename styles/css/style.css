@@ -36,15 +36,47 @@ body {
   flex: 5;
   height: 600px;
 }
-.container .productContainer .productLeft .productImage {
+.container .productContainer .productLeft .productImageWrapper {
+  width: 100%;
+  height: 100%;
+}
+.container .productContainer .productLeft .productImageWrapper .productImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: none;
   border-radius: 20px 0 0 20px;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
 }
-.container .productContainer .productLeft .productImage.active {
+.container .productContainer .productLeft .productImageWrapper .productImage.active {
   display: block;
+}
+.container .productContainer .productLeft .productThumbWrapper {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  transform: translateY(calc(-100% - 10px));
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container .productContainer .productLeft .productThumbWrapper .productThumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
+}
+.container .productContainer .productLeft .productThumbWrapper .productThumb.active {
+  border: 3px solid #ff69b4;
 }
 .container .productContainer .productRight {
   flex: 7;

@@ -30,15 +30,49 @@ body {
             flex: 5;
             height: $heightContainer;
 
-            .productImage {
+            .productImageWrapper {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
-                display: none;
-                border-radius: $brContainer 0 0 $brContainer;
 
-                &.active {
-                    display: block;
+                .productImage {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: none;
+                    border-radius: $brContainer 0 0 $brContainer;
+                    -webkit-user-drag: none;
+                    -khtml-user-drag: none;
+                    -moz-user-drag: none;
+                    -o-user-drag: none;
+                    user-select: none;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+
+            .productThumbWrapper {
+                width: 80%;
+                height: 50px;
+                margin: 0 auto;
+                transform: translateY(calc(-100% - 10px));
+                @include center(space-around);
+
+                .productThumb {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    cursor: pointer;
+                    -webkit-user-drag: none;
+                    -khtml-user-drag: none;
+                    -moz-user-drag: none;
+                    -o-user-drag: none;
+                    user-select: none;
+
+                    &.active {
+                        border: 3px solid $pink;
+                    }
                 }
             }
         }
@@ -181,12 +215,12 @@ body {
                         cursor: pointer;
                         border: none;
 
-                    &:hover {
-                        background-position: right center; /* change the direction of the change here */
-                        text-decoration: none;
-                        transform: scale(1.05);
+                        &:hover {
+                            background-position: right center; /* change the direction of the change here */
+                            text-decoration: none;
+                            transform: scale(1.05);
+                        }
                     }
-                }
                 }
 
                 .productShare {

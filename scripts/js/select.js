@@ -9,7 +9,7 @@ export function addOption2(select, data, selected = false) {
     let option = document.createElement('option');
     option.value = data.id.toString();
     option.text = data.name;
-    option.setAttribute('data-price', (data.price / 100).toString());
+    option.setAttribute('data-price', data.price.toString());
     option.selected = selected;
     select.add(option);
 }

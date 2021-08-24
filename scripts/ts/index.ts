@@ -1,19 +1,26 @@
 import * as data from './datas.js';
 import * as Select from './select.js';
 
+// Prix en centimes
+const normalPrice = 50000;
+const promoPrice = 19990;
+const basePrice= promoPrice || normalPrice;
+
+//*************************************\
+//* MENUS SELECT                       *
+//*************************************/
+
 const selectSuit = document.querySelector('#select_suits') as HTMLSelectElement;
 const selectDurations = document.querySelector('#select_durations') as HTMLSelectElement;
 const selectActivities = document.querySelector('#select_activities') as HTMLSelectElement;
+const priceTotal = document.querySelector('#priceTotal') as HTMLDivElement;
 
-const priceTotal = document.querySelector('#priceTotal') as HTMLSpanElement;
+const tabIds = ['select_suits', 'select_durations', 'select_activities'];
+const getIndexId = (id: string) => tabIds.indexOf(id);
 
-declare interface IPrices {
-    select_suits?: number,
-    select_durations?: number,
-    select_activities?: number,
-}
-
-let prices:IPrices;
+let tabPrices = new Array<number>(3);
+const formatPrice = (number: number) => (number / 100).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR',minimumFractionDigits: 2 });
+const sumPrices = () => tabPrices.reduce((sum, value) => sum + value, basePrice);
 
 Select.addOptions(selectSuit, data.suits);
 Select.addOptions(selectDurations, data.durations);
@@ -27,10 +34,40 @@ function setPrice(e: Event) {
     const select = e.target as HTMLSelectElement;
     const optionSelected = select.options[select.selectedIndex];
     const priceSpan = select.parentElement?.querySelector('.productFromSelectPriceValue') as HTMLSpanElement;
-    const price = optionSelected.getAttribute('data-price') ?? '0';
-    priceSpan.innerText = price;
-    const id = select.id as IPrices;
-    // prices[select.id] = parseInt(price, 10);
-    // prices.select_suits = parseInt(price, 10);
-    console.log(prices);
+    const price = parseInt(optionSelected.getAttribute('data-price') ?? '0', 10);
+    tabPrices[getIndexId(select.id)] = price;
+    priceSpan.innerText = formatPrice(price);
+    priceTotal.innerText = formatPrice(sumPrices());
 }
+
+//*************************************\
+//* INITIALISATION PRIX                *
+//*************************************/
+
+const productPriceNormal = document.querySelector('.productPriceNormal') as HTMLDivElement;
+const productPricePromo = document.querySelector('.productPricePromo') as HTMLDivElement;
+
+productPriceNormal.innerText = formatPrice(normalPrice);
+productPricePromo.innerText = formatPrice(promoPrice);
+priceTotal.innerText = formatPrice(promoPrice);
+
+//*************************************\
+//* SUBMIT                             *
+//*************************************/
+
+const btn_submit = document.querySelector('#btn_submit');
+const sound = new Audio('../../sounds/hum.mp3');
+
+const addToCart = () => {};
+
+btn_submit?.addEventListener('click', () => {
+    sound.play();
+});
+
+//*************************************\
+//* SLIDER                             *
+//*************************************/
+
+//*************************************\
+//* RATING                             *
+//*************************************/

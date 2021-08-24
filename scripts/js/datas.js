@@ -1,7 +1,7 @@
 export const suits = [
-    { id: 1, name: 'Tenue ordinaire', price: 0 },
+    { id: 1, name: 'Tenue Ordinaire', price: 0 },
     { id: 2, name: 'Tenue Elégante', price: 1000 },
-    { id: 3, name: 'Tenue Déguisé (Policier, Pompier, Plombier)', price: 2000 },
+    { id: 3, name: 'Tenue Déguisée (Policier, Pompier, Plombier)', price: 2000 },
     { id: 4, name: 'Tenue Exotique (Canard, Poule, Hippopotame)', price: 3000 },
     { id: 5, name: 'Joust la guitare', price: 4000 },
     { id: 6, name: '♥ Joust la guitare, sans la guitare ♥', price: 10000 },

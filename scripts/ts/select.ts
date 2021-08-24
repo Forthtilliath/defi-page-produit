@@ -22,7 +22,7 @@ export function addOption2(select: HTMLSelectElement, data: IData, selected: boo
     let option = document.createElement('option') as HTMLOptionElement;
     option.value = data.id.toString();
     option.text = data.name;
-    option.setAttribute('data-price', (data.price/100).toString());
+    option.setAttribute('data-price', data.price.toString());
     option.selected = selected;
     select.add(option);
 }

@@ -133,12 +133,13 @@ body {
   outline: none;
 }
 .container .productContainer .productRight .productForm .productFormSelectWrapper .productFromSelectPrice {
-  width: 100px;
+  width: 110px;
   text-align: right;
 }
 .container .productContainer .productRight .productForm .productFormSelectWrapper .productFromPriceLabel {
   width: 100%;
   text-align: right;
+  padding-right: 10px;
 }
 .container .productContainer .productRight .productForm .productFormSelectWrapper .productFromPriceTotal {
   width: 100px;
@@ -152,7 +153,24 @@ body {
   filter: drop-shadow(1px 2px 5px black);
 }
 .container .productContainer .productRight .productActions .productAddCart .productAddCartButton {
-  padding: 20px;
+  background-image: linear-gradient(to right, #ff2726 0%, #ff9f3b 51%, #ff2726 100%);
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+  border: none;
+}
+.container .productContainer .productRight .productActions .productAddCart .productAddCartButton:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  text-decoration: none;
+  transform: scale(1.05);
 }
 .container .productContainer .productRight .productActions .productShare {
   display: flex;

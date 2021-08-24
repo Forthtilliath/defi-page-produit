@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ff69b4;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100vw - 5%);
+  height: 100vh;
+  margin: 0 auto;
+}
+.container .productContainer {
+  max-width: 1200px;
+  height: 550px;
+  border-radius: 20px;
+  background-color: rgba(242, 242, 242, 0.52);
+  display: flex;
+  box-shadow: 3px 3px 33px 0 #232323;
+}
+.container .productContainer .productLeft {
+  flex: 5;
+  height: 550px;
+}
+.container .productContainer .productLeft .productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  border-radius: 20px 0 0 20px;
+}
+.container .productContainer .productLeft .productImage.active {
+  display: block;
+}
+.container .productContainer .productRight {
+  flex: 7;
+  height: 550px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.container .productContainer .productRight .productTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .productContainer .productRight .productTop .productTitle {
+  font-weight: 800;
+  text-shadow: 3px 3px 5px #4c4c4c;
+}
+.container .productContainer .productRight .productTop .productRating .productRatingImg {
+  width: 30px;
+  height: 30px;
+  fill: pink;
+}
+.container .productContainer .productRight .productTop .productRating .productRatingImg.filled {
+  fill: black;
+}
+.container .productContainer .productRight .productPrice {
+  display: flex;
+}
+.container .productContainer .productRight .productPrice .productPriceLabel {
+  font-weight: 300;
+}
+.container .productContainer .productRight .productPrice .productPriceNormal {
+  padding-left: 10px;
+  text-decoration: line-through;
+}
+.container .productContainer .productRight .productPrice .productPricePromo {
+  margin-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: red;
+  font-weight: 700;
+  transform: rotate(10deg) scale(1.3);
+  box-shadow: 0 0 1px black;
+  text-align: center;
+}
+.container .productContainer .productRight .productDescription {
+  flex: 100;
+  padding-top: 10px;
+  filter: drop-shadow(1px 2px 5px black);
+}
+.container .productContainer .productRight .productForm {
+  flex: 100;
+  filter: drop-shadow(1px 2px 5px black);
+}
+.container .productContainer .productRight .productForm .productFormSelectWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .productContainer .productRight .productForm .productFormSelectWrapper + .productFormSelectWrapper {
+  padding-top: 20px;
+}
+.container .productContainer .productRight .productForm .productFormSelectWrapper .productFormSelect {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 5px;
+}
+.container .productContainer .productRight .productForm .productFormSelectWrapper .productFormSelect:focus {
+  outline: none;
+}
+.container .productContainer .productRight .productForm .productFormSelectWrapper .productFromSelectPrice {
+  width: 100px;
+  text-align: right;
+}
+.container .productContainer .productRight .productActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  filter: drop-shadow(1px 2px 5px black);
+}
+.container .productContainer .productRight .productActions .productAddCart .productAddCartButton {
+  padding: 20px;
+}
+.container .productContainer .productRight .productActions .productShare {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+.container .productContainer .productRight .productActions .productShare .productShareIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+.container .productContainer .productRight .productActions .productShare .productShareIcon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px 2px #f2f2f2;
+}

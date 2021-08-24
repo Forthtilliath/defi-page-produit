@@ -58,6 +58,8 @@ body {
                 margin: 0 auto;
                 transform: translateY(calc(-100% - 10px));
                 @include center(space-around);
+                background-color: #fff5;
+                border-radius: 5px;
 
                 .productThumb {
                     width: 50px;
